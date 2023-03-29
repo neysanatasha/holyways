@@ -48,10 +48,10 @@ func (h *handlerDonation) GetDonation(c echo.Context) error {
 func (h *handlerDonation) CreateDonation(c echo.Context) error {
 	dataFile := c.Get("dataFile").(string)
 
-	goal, _ := strconv.Atoi(c.FormValue("goal"))
+	// goal, _ := strconv.Atoi(c.FormValue("goal"))
 	request := donationdto.DonationRequest{
 		Title:       c.FormValue("title"),
-		Goal:        goal,
+		Goal:        c.FormValue("goal"),
 		Description: c.FormValue("description"),
 		Image:       dataFile,
 	}
