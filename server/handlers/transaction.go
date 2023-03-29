@@ -131,7 +131,7 @@ func (h *handlerTransaction) CreateTransaction(c echo.Context) error {
 	// fmt.Println(getTransaction)
 
 	var s = snap.Client{}
-	s.New(("SB-Mid-server-wWQjonH-4tCb9YKTrhhUb-7c"), midtrans.Sandbox)
+	s.New(("SB-Mid-server-w9rm8wLNmz3hVlOU4i8bjglf"), midtrans.Sandbox)
 	fmt.Println("ssssssssssss", s)
 	req := &snap.Request{
 		TransactionDetails: midtrans.TransactionDetails{
@@ -191,7 +191,7 @@ func SendMail(status string, transaction models.Transaction) {
 	if status != transaction.Status && (status == "success") {
 		var CONFIG_SMTP_HOST = "smtp.gmail.com"
 		var CONFIG_SMTP_PORT = 587
-		var CONFIG_SENDER_NAME = "HollyWays <bogeymanyolo@gmail.com>"
+		var CONFIG_SENDER_NAME = "HollyWays <neysaatarigan@gmail.com>"
 		var CONFIG_AUTH_EMAIL = os.Getenv("EMAIL_SYSTEM")
 		var CONFIG_AUTH_PASSWORD = os.Getenv("PASSWORD_SYSTEM")
 
